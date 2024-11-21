@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <a href="{% url 'mainPage' %}"></a>
+          <h4 class="text-center">{{ data.first_name }} Results!!!</h4>
+              {% if data %}
+              <table class="offset-md-2 text-center table table-bordered">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Telugu</th>
+                    <th>Hindi</th>
+                    <th>English</th>
+                    <th>Maths</th>
+                    <th>Science</th>
+                    <th>Social</th>
+                    <th>Hall Ticket No </th>
+                  </tr>
+                </thead>
+                <tbody>
+              
+                  <tr>
+                    <td>{{data.id}}</td>
+                    <td>{{data.first_name}} {{data.last_name}}</td>
+                    <td>{{data.telugu}}</td>
+                    <td>{{data.hindi}}</td>
+                    <td>{{data.english}}</td>
+                    <td>{{data.maths}}</td>
+                    <td>{{data.science}}</td>
+                    <td>{{data.social}}</td>
+                    <td>{{data.hall_ticket}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              {% else %}
+              <h2 class="text-center">No Data Available Here!!!</h2>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+  </body>
+</html>
